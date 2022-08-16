@@ -5,10 +5,10 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Skill(models.Model):
-    skil = models.CharField( max_length=200)
+    skill = models.CharField( max_length=200)
 
     def __str__(self):
-        return self.skil
+        return self.skill
 
 
 
