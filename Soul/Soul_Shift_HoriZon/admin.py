@@ -1,8 +1,8 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Wallpaper,Skill, message
+from .models import Wallpaper,Skill, Info
 
 admin.site.register(Wallpaper)
 admin.site.register(Skill)
-admin.site.register(message)
+admin.site.register(Info)

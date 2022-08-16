@@ -27,7 +27,7 @@ class Wallpaper(models.Model):
     def __str__(self):
         return self.char_name
 
-class message(models.Model):
+class Info(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     wallpaper=models.ForeignKey(Wallpaper, on_delete=models.CASCADE)
     body = models.TextField()
