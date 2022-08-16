@@ -1,3 +1,4 @@
+
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -5,10 +6,10 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Skill(models.Model):
-    skill = models.CharField( max_length=200)
+    skil = models.CharField( max_length=200)
 
     def __str__(self):
-        return self.skill
+        return self.skil
 
 
 
@@ -36,3 +37,14 @@ class Info(models.Model):
 
     def __str__(self):
         return self.body[:50 ]
+
+
+# class Time_login(models.Model):
+#     date= models.DateField()
+#     time= models.TextField()
+
+#     updated= models.DateTimeField(auto_now=True)
+#     created = models.DateTimeField(auto_now_add=True)
+
+#     def __str__(self):
+#         return self.time, self.date
