@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 # Create your models here.
@@ -27,3 +28,12 @@ class party_member_info(models.Model):
     def __str__(self):
         return self.rank.upper()
 
+
+class Party_Info(models.Model):
+    party_name = models.CharField(max_length=125)
+    party_level = models.IntegerField(default=1,validators=[MaxValueValidator(100)])
+    party_size = models.IntegerField(default=2,validators=[MaxValueValidator(10)])
+    party_rank = models.CharField(default='G',max_length=1)
+
+    def __str__(self):
+        return self.party_name
