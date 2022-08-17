@@ -1,6 +1,6 @@
 body{
     text-align: center;
-    color: white;
+    color: rgb(15, 13, 13);
 }
 
 #myVideo {
@@ -57,3 +57,9 @@ body{
     color: #fff;
     padding: 30px;
   }
+
+
+#heading_1{
+  text-align: center;
+  color: black;
+}
