@@ -1,4 +1,5 @@
 
+from email.policy import default
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -17,6 +18,8 @@ class Wallpaper(models.Model):
     
     skill= models.ForeignKey(Skill, on_delete=models.SET_NULL, null= True)
     #host
+    # ima= models.ImageField()
+    # the image field cannot be uploaded without forms and for uploading the forms you need a funtion for forms to upload the image field it can be dome without forms but can cause erros and it is not that worth it.
     char_name= models.CharField(max_length=100)
     role= models.TextField(null=True, blank=True)
 
