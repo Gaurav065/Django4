@@ -39,7 +39,7 @@ class Party_Info(models.Model):
     def __str__(self):
         return self.party_name
 
-class quests(models.Model):
+class quest(models.Model):
     quest_party= models.CharField(default='Herb collection', max_length=300)
     quest_rank = models.CharField(default='F', max_length=1)
     quest_time  = models.DateField(('Date'), default=datetime.date.today)
