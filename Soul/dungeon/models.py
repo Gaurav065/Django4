@@ -1,5 +1,6 @@
 from email.policy import default
 from django.db import models
+import datetime
 from django.core.validators import MaxValueValidator, MinValueValidator
 # Create your models here.
 class Party(models.Model):
@@ -37,3 +38,11 @@ class Party_Info(models.Model):
 
     def __str__(self):
         return self.party_name
+
+class quests(models.Model):
+    quest_party= models.CharField(default='Herb collection', max_length=300)
+    quest_rank = models.CharField(default='F', max_length=1)
+    quest_time  = models.DateField(('Date'), default=datetime.date.today)
+
+    def __str__(self):
+        return self.quest_rank
