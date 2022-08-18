@@ -46,3 +46,9 @@ class quest(models.Model):
 
     def __str__(self):
         return self.quest_rank
+
+class Reward(models.Model):
+    quest_reward = models.CharField(default='10 coppers', max_length= 50)
+
+    def __str__(self):
+        return self.quest_reward
