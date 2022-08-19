@@ -1,10 +1,13 @@
 from email.policy import default
+from unicodedata import name
 from django.db import models
+from django.contrib.auth.models import User
 import datetime
 from django.core.validators import MaxValueValidator, MinValueValidator
 # Create your models here.
 class Party(models.Model):
     
+    party_id= models.CharField(default='Duo Party',max_length= 100)
     
     party_member= models.CharField(max_length=100)
     member_level= models.IntegerField(default=0)
@@ -14,7 +17,7 @@ class Party(models.Model):
     notes = models.TextField(max_length=300, default='No notes')
 
     def __str__(self):
-        return self.party_member, str(self.member_level), str(self.member_role), str(self.notes)
+        return self.party_member, self.name, str(self.member_level), str(self.member_role), str(self.notes)
 
 class party_member_info(models.Model):
     level= models.IntegerField(default=0, validators=[MaxValueValidator(100), MinValueValidator(0)])
@@ -31,7 +34,7 @@ class party_member_info(models.Model):
 
 
 class Party_Info(models.Model):
-    party_name = models.CharField(max_length=125)
+    # party_name = models.ForeignKey(Party, on_delete=models.CASCADE, default=Party.party_id)
     party_level = models.IntegerField(default=1,validators=[MaxValueValidator(100)])
     party_size = models.IntegerField(default=2,validators=[MaxValueValidator(10)])
     party_rank = models.CharField(default='G',max_length=1)
