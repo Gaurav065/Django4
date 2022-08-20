@@ -1,8 +1,13 @@
+from re import X
 from django.shortcuts import render
 from django.urls import path, include
+from .models import Profile
+
 
 def home(request):
-    return render(request, 'home.html')
+    X=Profile.objects.get(id=1)
+    context={'me':X}
+    return render(request, 'home.html',context)
 
 def contact_me(request):
     return render(request,'contact.html')
