@@ -1,9 +1,12 @@
+from dataclasses import field
+from email.policy import default
 from secrets import choice
 from socket import fromshare
 from sys import maxsize
 from django.db import models
 import datetime
 from django import forms
+from django.forms import ModelForm
 
 
 jobs =(
@@ -61,10 +64,10 @@ class education(models.Model):
 
 class experiance(models.Model):
 
-    job= forms.ChoiceField(choices=jobs)
+    job= models.CharField(default='None', max_length=200,choices=jobs)
     company_name = models.CharField(default='Client_Based', max_length=100)
 
-    job_type = forms.ChoiceField(choices=type_j)
+    job_type = models.CharField(default='None',max_length=200, choices=type_j)
 
     description = models.TextField(default=job, max_length=300)
     location = models.CharField(default='India', max_length=50)
@@ -73,6 +76,13 @@ class experiance(models.Model):
 
     def edt(self):
         return   self.location+'|' + self.start_date + '-' + self.end_date
+
+
+
+class exp_form(ModelForm):
+    class Meta:
+        model = experiance
+        fields = '__all__'
 
 class skill(models.Model):
     pass
