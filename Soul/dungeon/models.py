@@ -9,7 +9,7 @@ class Party(models.Model):
     
     party_id= models.CharField(default='Duo Party',max_length= 100)
     
-    party_member= models.CharField(max_length=100)
+    party_members= models.CharField(max_length=100)
     member_level= models.IntegerField(default=0)
 
     member_role= models.CharField(max_length=75)
@@ -55,3 +55,8 @@ class Reward(models.Model):
 
     def __str__(self):
         return self.quest_reward
+
+class reg_party(models.Model):
+    party_id = models.ForeignKey(Party.party_id, on_delete=models.SET_NULL )
+    party_size = models.ForeignKey(Party_Info.party_size, on_delete= models.SET_NULL)
+    party_cap = models.CharField(max_length=50)
