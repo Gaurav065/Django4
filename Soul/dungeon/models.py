@@ -56,7 +56,7 @@ class Reward(models.Model):
     def __str__(self):
         return self.quest_reward
 
-class reg_party(models.Model):
-    party_id = models.ForeignKey(Party.party_id, on_delete=models.SET_NULL )
-    party_size = models.ForeignKey(Party_Info.party_size, on_delete= models.SET_NULL)
-    party_cap = models.CharField(max_length=50)
+# class reg_party(models.Model):
+#     party_id = models.ForeignKey(Party.party_id, on_delete=models.SET_NULL )
+#     party_size = models.ForeignKey(Party_Info.party_size, on_delete= models.SET_NULL)
+#     party_cap = models.CharField(max_length=50)
