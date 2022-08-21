@@ -10,4 +10,6 @@ def home(request):
     return render(request, 'home.html',context)
 
 def contact_me(request):
-    return render(request,'contact.html')
+    X=Profile.objects.get(id=1)
+    context={'me':X}
+    return render(request,'contact.html',context)
