@@ -130,4 +130,7 @@ class skill(models.Model):
     databases = models.CharField(default='SQL',choices=db,max_length=100)
 
 
-class
+class skillFrom(ModelForm):
+    class Meta:
+        model = skill
+        fields = '__all__'
