@@ -134,3 +134,7 @@ class skillFrom(ModelForm):
     class Meta:
         model = skill
         fields = '__all__'
+
+
+class certificates(models.Model):
+    certi = models.ImageField(default='img/Screenshot 2022-08-21 054646.png', upload_to='img/')
