@@ -92,7 +92,7 @@ class education(models.Model):
         return self.gpa
     
     def dt(self):
-        return self.date_start +"-"+ self.date_end
+        return str(self.date_start) +"-"+ str(self.date_end)
 
     def loc(self):
         return self.loc
