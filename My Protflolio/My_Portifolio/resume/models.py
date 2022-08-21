@@ -33,6 +33,36 @@ type_j = (
     ("4", "Freelancing"),
 )
 
+
+programming_languages = (
+    ("1", "Python"),
+    ("2", "Java"),
+    ("3", "C"),
+    ("4", "C++"),
+    ("5", "C#"),
+    ("6", "Rust"),
+    ("7", "GoLang"),
+    ("8", "SQL"),
+    ("9", "PHP"),
+    ("10", "Scala"),
+    ("11", "Swift"),
+    ("12", "Matlab"),
+    ("13", "Kotlin"),
+    ("14", "Node.js"),
+    ("15", "React.js"),
+    ("16", "CSS"),
+    ("17", "HTML"),
+    ("18", "TypeScript"),
+    ("19", "Ruby"),
+)
+
+type_j = (
+    ("1", "Internship"),
+    ("2", "Full time"),
+    ("3", "Part Time"),
+    ("4", "Freelancing"),
+)
+
 class education(models.Model):
     
     university = models.CharField(default="Lovely Professional University", max_length=100)
