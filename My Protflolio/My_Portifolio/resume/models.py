@@ -34,7 +34,7 @@ type_j = (
 )
 
 
-programming_languages = (
+pr_ln = (
     ("1", "Python"),
     ("2", "Java"),
     ("3", "C"),
@@ -62,6 +62,14 @@ type_j = (
     ("3", "Part Time"),
     ("4", "Freelancing"),
 )
+
+
+db = (
+    ("1", "MongoDB"),
+    ("2", "Postgres"),
+    ("3", "MySQL"),
+)
+
 
 class education(models.Model):
     
@@ -115,4 +123,11 @@ class exp_form(ModelForm):
         fields = '__all__'
 
 class skill(models.Model):
-    pass
+    
+    programming_languages=models.CharField(default='Python',choices=pr_ln,max_length=100)
+    modules_libraries = models.CharField(default='python libraries', max_length=400)
+    tools = models.CharField(default='VS code, Github, pyqt designer, unreal engine, adobe, etc', max_length=200)
+    databases = models.CharField(default='SQL',choices=db,max_length=100)
+
+
+class
