@@ -1,8 +1,3 @@
-from dataclasses import field
-from email.policy import default
-from secrets import choice
-from socket import fromshare
-from sys import maxsize
 from django.db import models
 import datetime
 from django import forms
@@ -34,41 +29,41 @@ type_j = (
 )
 
 
-pr_ln = (
-    ("1", "Python"),
-    ("2", "Java"),
-    ("3", "C"),
-    ("4", "C++"),
-    ("5", "C#"),
-    ("6", "Rust"),
-    ("7", "GoLang"),
-    ("8", "SQL"),
-    ("9", "PHP"),
-    ("10", "Scala"),
-    ("11", "Swift"),
-    ("12", "Matlab"),
-    ("13", "Kotlin"),
-    ("14", "Node.js"),
-    ("15", "React.js"),
-    ("16", "CSS"),
-    ("17", "HTML"),
-    ("18", "TypeScript"),
-    ("19", "Ruby"),
-)
+# pr_ln = (
+#     ("1", "Python"),
+#     ("2", "Java"),
+#     ("3", "C"),
+#     ("4", "C++"),
+#     ("5", "C#"),
+#     ("6", "Rust"),
+#     ("7", "GoLang"),
+#     ("8", "SQL"),
+#     ("9", "PHP"),
+#     ("10", "Scala"),
+#     ("11", "Swift"),
+#     ("12", "Matlab"),
+#     ("13", "Kotlin"),
+#     ("14", "Node.js"),
+#     ("15", "React.js"),
+#     ("16", "CSS"),
+#     ("17", "HTML"),
+#     ("18", "TypeScript"),
+#     ("19", "Ruby"),
+# )
 
-type_j = (
-    ("1", "Internship"),
-    ("2", "Full time"),
-    ("3", "Part Time"),
-    ("4", "Freelancing"),
-)
+# type_j = (
+#     ("1", "Internship"),
+#     ("2", "Full time"),
+#     ("3", "Part Time"),
+#     ("4", "Freelancing"),
+# )
 
 
-db = (
-    ("1", "MongoDB"),
-    ("2", "Postgres"),
-    ("3", "MySQL"),
-)
+# db = (
+#     ("1", "MongoDB"),
+#     ("2", "Postgres"),
+#     ("3", "MySQL"),
+# )
 
 
 class education(models.Model):
@@ -116,28 +111,36 @@ class experiance(models.Model):
         return self.company_name
 
     def edt(self):
-        return   self.location+'|' + self.start_date + '-' + self.end_date
+        return   str(self.location)+'|' + str(self.start_date) + '-' + str(self.end_date)
 
-
-
-class exp_form(ModelForm):
-    class Meta:
-        model = experiance
-        fields = '__all__'
+# class exp_form(ModelForm):
+#     class Meta:
+#         model = experiance
+#         fields = '__all__'
 
 class skill(models.Model):
+    skill_type = (
+        ("P","Programming Language"),
+        ("M","Modules/Libraries"),
+        ("T","Tools"),
+        ("D","Databases"),
+    )
     
-    programming_languages=models.CharField(default='Python',choices=pr_ln,max_length=100)
-    modules_libraries = models.CharField(default='python libraries', max_length=400)
-    tools = models.CharField(default='VS code, Github, pyqt designer, unreal engine, adobe, etc', max_length=200)
-    databases = models.CharField(default='SQL',choices=db,max_length=100)
+    # programming_languages=models.CharField(default='Python',choices=pr_ln,max_length=100)
+    # modules_libraries = models.CharField(default='python libraries', max_length=400)
+    # tools = models.CharField(default='VS code, Github, pyqt designer, unreal engine, adobe, etc', max_length=200)
+    # databases = models.CharField(default='SQL',choices=db,max_length=100)
 
+    name = models.CharField(default="Python", max_length=25)
+    typeof = models.CharField(default="P",max_length=20,choices=skill_type)
 
-class skillFrom(ModelForm):
-    class Meta:
-        model = skill
-        fields = '__all__'
+# class skillFrom(ModelForm):
+#     class Meta:
+#         model = skill
+#         fields = '__all__'
 
 
 class certificates(models.Model):
+    name = models.CharField(default="best programmer", max_length=100)
+    url = models.URLField()
     certi = models.ImageField(default='img/Screenshot 2022-08-21 054646.png', upload_to='img/')
