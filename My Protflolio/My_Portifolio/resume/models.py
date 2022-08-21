@@ -112,6 +112,9 @@ class experiance(models.Model):
     end_date = models.DateField(('Date'), default=datetime.date.today)
     start_date = models.DateField(("Date"), default=datetime.date.today)
 
+    def __str__(self):
+        return self.company_name
+
     def edt(self):
         return   self.location+'|' + self.start_date + '-' + self.end_date
 
