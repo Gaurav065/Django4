@@ -77,23 +77,7 @@ class education(models.Model):
 
     location = models.CharField(default='Phagwara, Punjab, India, 144411', max_length=150)
 
-    def uni_name(self):
-        return self.university
     
-    def crs(self):
-        return self.course
-
-    def cgpa(self):
-        return self.gpa
-    
-    def dt(self):
-        return str(self.date_start) +"-"+ str(self.date_end)
-
-    def loc(self):
-        return self.loc
-
-
-
 
 class experiance(models.Model):
 
@@ -113,10 +97,6 @@ class experiance(models.Model):
     def edt(self):
         return   str(self.location)+'|' + str(self.start_date) + '-' + str(self.end_date)
 
-# class exp_form(ModelForm):
-#     class Meta:
-#         model = experiance
-#         fields = '__all__'
 
 class skill(models.Model):
     skill_type = (
@@ -126,18 +106,14 @@ class skill(models.Model):
         ("D","Databases"),
     )
     
-    # programming_languages=models.CharField(default='Python',choices=pr_ln,max_length=100)
+    typeof = models.CharField(default="P",max_length=20,choices=skill_type)
+    name = models.CharField(default="Python", max_length=25)
+
     # modules_libraries = models.CharField(default='python libraries', max_length=400)
     # tools = models.CharField(default='VS code, Github, pyqt designer, unreal engine, adobe, etc', max_length=200)
     # databases = models.CharField(default='SQL',choices=db,max_length=100)
+    # programming_languages=models.CharField(default='Python',choices=pr_ln,max_length=100)
 
-    name = models.CharField(default="Python", max_length=25)
-    typeof = models.CharField(default="P",max_length=20,choices=skill_type)
-
-# class skillFrom(ModelForm):
-#     class Meta:
-#         model = skill
-#         fields = '__all__'
 
 
 class certificates(models.Model):
