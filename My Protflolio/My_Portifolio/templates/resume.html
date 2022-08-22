@@ -10,21 +10,20 @@
 <h1>
     Education
 </h1>
-{{ed.uni_name}}
+<div>
+    {% for i in ed%}
+
+    <div class="ed card">
+        <h1>{{ ed.university}}</h1>
+        <h1>{{ ed.course}}</h1>
+        <h1>{{ ed.gpa}}</h1>
+        <h1>{{ ed.date_start}}--{{ed.date_end}}</h1>
+        <h1>{{ ed.location}}</h1>
+    </div>
+    {% endfor %}
+</div>
 <br>
-{{ed.course}}
-<br>
-{{ed.gpa}}
-<br>
-{{ed.dt}}
-<br>
-{{ed.location}}
-<br>
-<h2>Experience</h2>
-<br>
-{{ex.job}}
-<br>
-<a href="http://127.0.0.1:8000/project">
+<a href="/project">
     <button type="button">project</button>
 </a>
 
