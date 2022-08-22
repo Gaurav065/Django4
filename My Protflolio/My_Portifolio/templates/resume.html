@@ -3,29 +3,17 @@
 {% block title %}Resume{% endblock title %}
 
 {% block content %}
-<h1>
-    Resume
-</h1>
-<br>
-<h1>
-    Education
-</h1>
-<div>
-    {% for i in ed%}
 
-    <div class="ed card">
-        <h1>{{ ed.university}}</h1>
-        <h1>{{ ed.course}}</h1>
-        <h1>{{ ed.gpa}}</h1>
-        <h1>{{ ed.date_start}}--{{ed.date_end}}</h1>
-        <h1>{{ ed.location}}</h1>
-    </div>
-    {% endfor %}
+<h1>Resume</h1>
+
+<div class="button_project_page">
+    <a href="/projects">
+        <button type="button">Projects</button>
+    </a>
 </div>
-<br>
-<a href="/project">
-    <button type="button">project</button>
-</a>
 
 
 {% endblock content %}
+
+
+
