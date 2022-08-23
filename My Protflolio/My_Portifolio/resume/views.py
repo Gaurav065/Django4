@@ -12,7 +12,7 @@ def experiance_det(request):
     experiance_detail=experiance.objects.all()
     
     context={
-        'experiance_details':experiance_detail
+        'experiance_details':experiance_detail,
     }
 
     return render(request,'experiance.html',context)

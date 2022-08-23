@@ -92,10 +92,7 @@ class experiance(models.Model):
     start_date = models.DateField(("Date"), default=datetime.date.today)
 
     def __str__(self):
-        return self.company_name
-
-    def edt(self):
-        return   str(self.location)+'|' + str(self.start_date) + '-' + str(self.end_date)
+        return self.job
 
 
 class skill(models.Model):
