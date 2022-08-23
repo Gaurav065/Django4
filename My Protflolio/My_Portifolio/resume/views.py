@@ -2,12 +2,12 @@ from django.shortcuts import render
 from django.urls import path, include
 from .models import education,experiance, certificates
 
-def resume(request,pk):
+def resume(request):
     
-    X=education.objects.all(pk=pk)
+    education_details=education.objects.all()
     
-    y=experiance.objects.all(pk=pk)
+    experiance_details=experiance.objects.all()
     
-    z=certificates.objects.all(pk=pk)
+    certi_details=certificates.objects.all()
     
-    
+    return render(request, 'resume.html',{'education_details':education_details},{'experiance_details':experiance_details},{'cerificate_detials':certi_details} )
