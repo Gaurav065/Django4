@@ -18,16 +18,17 @@
 </div>
 
 
-{%for exp in  experiance%}
+
 <div>
     <h1>Experiance</h1>
+    {%for exp in  experiance_details%}
     <div>
-        {{exp.job}}
+        <h1>{{exp.job}}</h1>
     </div>
 </div>
     {% endfor %}
     <div class="button_project_page">
-        <a href="/projects">
+        <a href="/project">
             <button type="button">Projects</button>
         </a>
     </div>

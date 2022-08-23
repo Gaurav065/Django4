@@ -9,7 +9,7 @@ def resume(request):
     
     return render(request, 'resume.html',{'education_details':education_details})
 def experiance(request,pk):
-    experiance_detail=experiance.obejcts.get(pk=pk)
+    experiance_detail=experiance.objects.get(pk=pk)
     
     context={
         'experiance_details':experiance_detail
