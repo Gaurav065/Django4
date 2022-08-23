@@ -8,11 +8,11 @@ def resume(request):
     education_details=education.objects.get(id=1)
     
     return render(request, 'resume.html',{'education_details':education_details})
-def experiance(request,pk):
-    experiance_detail=experiance.objects.get(pk=pk)
+def experiance_det(request):
+    experiance_detail=experiance.objects.all()
     
     context={
         'experiance_details':experiance_detail
     }
 
-    return render(request, 'resume.html',context)
+    return render(request,'experiance.html',context)

@@ -3,5 +3,9 @@
 
 {% block content %}
 
+<h1>Experiance</h1>
+{%for experiance_details in experiance_details%}
+    <h2>{{experiance_details.job}}</h2>
+{% endfor %}
 
 {% endblock content %}
