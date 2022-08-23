@@ -6,11 +6,31 @@
 
 <h1>Resume</h1>
 
-<div class="button_project_page">
-    <a href="/projects">
-        <button type="button">Projects</button>
-    </a>
+<div class="Education">
+    <h1>Education</h1>
+    <div class="education_details">
+    <h3>{{education_details.university}}</h3>
+    <h3>{{education_details.course}}</h>
+    <h3>{{education_details.gpa}}</h3>
+    <h3>{{education_details.location}}</h3>
+    <h3>{{education_details.date_start}}-{{education_details.date_end}}</h3>
+    </div>
 </div>
 
 
-{% endblock content %}
+{%for exp in  experiance%}
+<div>
+    <h1>Experiance</h1>
+    <div>
+        {{exp.job }}
+    </div>
+</div>
+    
+    <div class="button_project_page">
+        <a href="/projects">
+            <button type="button">Projects</button>
+        </a>
+    </div>
+    
+    
+    {% endblock content %}
