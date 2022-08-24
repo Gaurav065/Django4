@@ -3,7 +3,7 @@ from django.db import models
 from django.forms import ModelForm
 from resume.models import skill,experiance
 
-class P3roject(models.Model):
+class Project(models.Model):
     project_name = models.CharField(max_length=100)
     sk = models.ManyToManyField('resume.skill', related_name='sk')
     link = models.URLField(default='https://github.com/Gaurav065')
