@@ -3,7 +3,7 @@ from .models import Project
 
 # Create your views here.
 def project(request):
-    X=Project.objects.all()
+    projects=Project.objects.all()
     
-    context={'me':X}
+    context={'project':projects}
     return render(request,'projects.html', context)#context)

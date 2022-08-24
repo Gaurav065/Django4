@@ -4,19 +4,17 @@
 
 
 {% block content %}
+<h1> projects</h1>
 
-<h1>This is the Projects</h1>
-<br>
-{{me.project_name}}
-<br>
-{{me.sk}}
-<br>
-{{me.link}}
-<br>
-{{me.description}}
-<br>
-{{me.client}}
-<br>
+{% for project in projects%}
+
+    
+
+<h1>{{project.project_name}}</h1>
+    
+{%endfor%}
+
+
 <a href="/contact_me">
     <button type="button">Contact Me</button>
 </a>
