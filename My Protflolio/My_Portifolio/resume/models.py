@@ -105,6 +105,8 @@ class skill(models.Model):
     
     typeof = models.CharField(default="P",max_length=20,choices=skill_type)
     name = models.CharField(default="Python", max_length=25)
+    def __str__(self):
+        return self.name
 
     # modules_libraries = models.CharField(default='python libraries', max_length=400)
     # tools = models.CharField(default='VS code, Github, pyqt designer, unreal engine, adobe, etc', max_length=200)
@@ -117,3 +119,6 @@ class certificates(models.Model):
     name = models.CharField(default="best programmer", max_length=100)
     url = models.URLField()
     certi = models.ImageField(default='img/Screenshot 2022-08-21 054646.png', upload_to='img/')
+
+    def __str__(self):
+        return self.name

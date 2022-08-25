@@ -6,12 +6,23 @@
 {% block content %}
 <h1> projects</h1>
 
-{% for project in projects%}
+{% for prj in project%}
 
     
 
-<h1>{{project.project_name}}</h1>
-    
+<h1>{{prj.project_name}}</h1>
+<h2>Description <p>
+    {{prj.description}}
+</p></h2>
+
+<p>
+{% for skill in  prj.sk.all %}
+{{skill.name}}({{skill.get_typeof_display}}), 
+
+
+{% endfor %}
+</p>
+
 {%endfor%}
 
 
