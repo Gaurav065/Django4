@@ -3,14 +3,22 @@
     {%block title%} Home{%endblock title%}
 
     {%block content%}
+    
+    <img src="/media/img/20201204_135823.jpg" alt="404 Not Found" id="bg_img">
+    
     <img src="/media/{{me.avatar}}" height="100px" width="100px"  alt="">
+    
+    
+    <br>{{me.full_name.title}}
+    
+    <br>{{me.about}}
+    
     <br>
-    {{me.full_name.title}}
-    <br>
-    {{me.about}}
-    <br>
+    
     <a href="/resume">
-        <button type="button">Resume</button>
+    <button type="button">Resume</button>
     </a>
+    
     <h1>This is the home_page/aboutme</h1>
+
     {%endblock%}
