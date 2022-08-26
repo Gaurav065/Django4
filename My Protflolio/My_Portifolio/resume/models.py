@@ -79,7 +79,7 @@ class education(models.Model):
 
     
 
-class experiance(models.Model):
+class experience(models.Model):
 
     job= models.CharField(default='None', max_length=200,choices=jobs)
     company_name = models.CharField(default='Client_Based', max_length=100)

@@ -1,0 +1,11 @@
+{% extends 'main.html'%}
+{% block title %}Experience{% endblock title %}
+
+{% block content %}
+
+<h1>Experience</h1>
+{%for experience_details in experience_details%}
+    <h2>{{experience_details.job_type}}</h2>
+{% endfor %}
+
+{% endblock content %}

@@ -5,6 +5,6 @@ from . import views
 
 urlpatterns = [
     path('resume/',views.resume, name="Resume"),
-    path('<int:pk>/',views.experiance, name='experiance'),
-    path('experiance/', views.experiance_det, name='exp')
+    path('<int:pk>/',views.experience, name='experience'),
+    path('experience/', views.experience_det, name='exp')
 ]
