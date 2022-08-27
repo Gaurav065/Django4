@@ -6,13 +6,12 @@ from .models import education,experience, certificates
 def resume(request):
     
     education_details=education.objects.get(id=1)
-    
-    return render(request, 'resume.html',{'education_details':education_details})
-def experience_det(request):
+
     experience_detail=experience.objects.all()
     
     context={
-        'experience_details':experience_detail,
+        'experience_detail':experience_detail,
+        'education_details':education_details,
     }
-
-    return render(request,'experience.html',context)
+    
+    return render(request, 'resume.html',context)

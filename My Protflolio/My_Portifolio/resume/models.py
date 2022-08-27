@@ -92,7 +92,7 @@ class experience(models.Model):
     start_date = models.DateField(("Date"), default=datetime.date.today)
 
     def __str__(self):
-        return self.job
+        return self.job_type
 
 
 class skill(models.Model):

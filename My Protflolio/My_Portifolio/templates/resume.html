@@ -17,16 +17,13 @@
     </div>
 </div>
 
-
-
-<div>
-    <h1>Experiance</h1>
-    {%for exp in  experiance_details%}
-    <div>
-        <h1>{{exp.job}}</h1>
-    </div>
-</div>
+<div class="experiance">
+    {% for exp in experience_detail %}
+    <h1>{{exp.get_job_display}}</h1>
+    
     {% endfor %}
+</div>
+    
     <div class="button_project_page">
         <a href="/projects">
             <button type="button">Projects</button>
