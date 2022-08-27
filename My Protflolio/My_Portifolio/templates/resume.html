@@ -20,6 +20,8 @@
 <div class="experiance">
     {% for exp in experience_detail %}
     <h1>{{exp.get_job_display}}</h1>
+    <h2>{{exp.get_job_type_display}}</h2>
+    
     
     {% endfor %}
 </div>
