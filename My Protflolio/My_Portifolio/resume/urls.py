@@ -5,5 +5,6 @@ from . import views
 
 urlpatterns = [
     path('resume/',views.resume, name="Resume"),
-    
+    path('<str:filepath>/', views.download_file)
+
 ]

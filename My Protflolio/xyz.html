@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMS</title>
+</head>
+
+<style>
+    /* font imports */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+    /* body styles */
+    body{
+        background-color: rgb(50,50,50);
+    }
+    .container{
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto auto auto;
+    }
+
+    /* navbar syles */
+    .navbar{
+        grid-row:1 / span 2;
+        grid-column: 1 / span 8;
+        border-bottom:solid rgb(238, 238, 224);
+    }
+
+    .nav-image{
+        padding-left: 2%;
+        float: left;
+        margin-top: 1%;
+    }
+    .nav-btn-group{
+        position: relative;
+        padding-right: 5%;
+        top:20%;
+    }
+    .nav-btn-group li{
+        
+        display: inline;
+        padding: 10px;
+        float: right;
+    }
+    .nav-btn-group li button{
+        display: block;
+
+        font-size: x-large;
+        background-color: rgb(20,20,20);
+        color:rgb(255,255,255);
+
+        padding:10px;
+        border-radius: 20px 20px 0px 0px;
+        border:solid 3px white;
+        border-bottom: 0px;
+
+        font-family:"Montserrat";
+    }
+    .nav-btn-group .logout button{
+        display: block;
+
+        font-size: x-large;
+        background-color: rgb(250, 50, 50);
+        color:rgb(255,255,255);
+
+        padding:10px;
+        border-radius: 20px 20px 0px 0px;
+        border:solid 3px white;
+        border-bottom: 0px;
+
+        font-family:"Montserrat";
+    }
+
+    .nav-btn-group li button:hover{
+        display: block;
+
+        font-size: x-large;
+        background-color: rgb(40,40,40);
+        color:rgb(200,200,200);
+
+        padding:10px;
+        border-radius: 20px 20px 0px 0px;
+        border:solid 1px white;
+        margin-left: 2px;
+        margin-right: 2px;
+        border-bottom: 0px;
+    }
+
+    .nav-btn-group .logout button:hover{
+        display: block;
+
+        font-size: x-large;
+        background-color: rgb(150, 50, 50);
+        color:rgb(255,255,255);
+
+        padding:10px;
+        border-radius: 20px 20px 0px 0px;
+        border:solid 1px white;
+        margin-left: 2px;
+        margin-right: 2px;
+
+        font-family:"Montserrat";
+    }
+
+    /* profile styles */
+    .profile{
+        grid-row:3 / span 4;
+        grid-column: 1 / span 2;
+        border-right:solid rgb(238, 238, 224);
+        border-bottom:solid rgb(238, 238, 224);
+        padding-bottom: 5px;
+    }
+    .profile-pic{
+        margin-top: 15px;
+        margin-left: 5px;
+    }
+    .profile-name{
+        position: relative;
+        float: right;
+
+        font-family: Poppins;
+        font-size: x-large;
+        color:white;
+
+        bottom:20%;
+        right: 10%;
+    }
+    .profile-info{
+        margin-right:7px;
+        font-size: large;
+        font-family:poppins;
+        color:white;
+        
+        border-right:solid rgb(238, 238, 224);
+        border-left:solid rgb(238, 238, 224);
+
+        background-color: rgba(100,100,100,0.4);
+    }
+    .profile-info ul li{
+        list-style: url("https://www.flaticon.com/svg/vstatic/svg/556/556232.svg?token=exp=1617174950~hmac=44bc0bcc202e3ec7bf9fe25b91bfa224");
+    }
+    .profile-info a{
+        text-decoration: none;
+        color:aquamarine;
+    }
+
+    /* attendance styles */
+    .attendance{
+        grid-row:3 / span 2;
+        grid-column: 3 / span 6;
+
+        border-bottom:solid rgb(238, 238, 224);
+
+        background-color: rgba(10,10,10,0.3);
+
+        overflow:hidden;
+    }
+    .attendance-heading{
+        font-family: Poppins;
+        color: white;
+
+        margin-left:4px;
+        font-size:large;
+    }
+
+    /* timetable style */
+    .timetable{
+        grid-row:5 / span 2;
+        grid-column: 3 / span 6;
+
+        border-bottom:solid rgb(238, 238, 224);
+
+        background-color: rgba(10,10,10,0.3);
+
+        overflow:hidden;
+    }
+    .timetable-heading{
+        font-family: Poppins;
+        color: white;
+
+        margin-left:4px;
+        font-size:large;
+    }
+
+    /* announcement styles */
+    .announcements{
+        grid-row:7 / span 1;
+        grid-column: 1 / span 4;
+
+        border-bottom:solid rgb(238, 238, 224);
+        border-right:solid rgb(238, 238, 224);
+
+        height: 50%;
+        overflow-y:scroll;
+
+        background-color: rgba(10,10,10,0.3);
+        color: white;
+    }
+    .announcement-heading{
+        font-family: Poppins;
+        color: white;
+
+        font-size:large;
+        margin-left:4px;
+        
+    }
+
+    /* leave styles */
+    .leave{
+        grid-row:7 / span 1;
+        grid-column: 5 / span 4;
+
+        border-bottom:solid rgb(238, 238, 224);
+
+        background-color: rgba(10,10,10,0.3);
+
+        height: 50%;
+        overflow-y:scroll;
+    }
+    .leave-heading{
+        font-family: Poppins;
+        color: white;
+
+        font-size:large;
+        margin-left:4px;
+    }
+
+    progress{
+        position: relative;
+        left:15%;
+        
+        width:70%;
+        height:12%;
+        margin-bottom: 15px;
+
+        
+    }
+    progress::-webkit-progress-bar{
+        background-color: yellow;
+        border-radius:30px;
+        height: 20px;
+
+        box-shadow: 0px 2px 5px rgba(0,0,0) inset;
+    }
+    progress::before{
+        position: absolute;
+        top:20%;
+        left:2%;
+
+        color:white;
+        font-size: large;
+        font-family: Poppins;
+        font-weight: 800;
+    }
+    progress.CHE::before{
+        content:"CHE : 78%";
+    }
+    progress.MEC::before{
+        content:"MEC : 83%";
+    }
+    progress.CSE::before{
+        content:"CSE : 70%";
+    }
+    progress.PEL::before{
+        content:"PEL : 97%";
+    }
+    progress.ECE::before{
+        content:"ECE : 60%";
+    }
+</style>
+
+<body>  
+    <div class="container">
+
+        <div class="navbar">
+            <div class="nav-image">
+                <img src="https://ums.lpu.in/LpuUms/Dashboard/img/new-logo.png">
+            </div>
+
+            <ul class="nav-btn-group">
+                <li class="logout"><button href="#" >Logout</button></li>
+                <li><button href="#">Change Pass</button></li>
+                <li><button href="#">Examination</button></li>
+                <li><button href="#">Time Table</button></li>
+                <li><button href="#">Home</button></li>
+            </ul>
+        </div>
+
+        <div class="profile">
+            <br>
+            <div class="profile-pic">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTR3zZjipG0-Lf-MtJcieX_ASoCDA_6JfGxA&usqp=CAU" height="200" width="200" alt="Default Image">
+            </div>
+            <div class="profile-name">
+                Default Name
+            </div>
+
+            <br>
+            <br>
+
+            <div class="profile-info">
+                <br>
+                <center>Default User Data</center><br>
+                <ul type="">
+                    <li>Roll No &emsp;&emsp;&emsp;&emsp;&emsp;-</li><hr>
+                    <li>Group &emsp;&emsp;&emsp;&emsp;&emsp;-</li><hr>
+                    <li>Programme&emsp;&emsp;&ensp;-</li><hr>
+                    <li>Book Issued&emsp;&emsp;&ensp;-</li>
+                </ul>
+                <br>
+                <a href="#"><center>Security Information</center></a>
+                <br>
+            </div>
+        </div>
+
+        <div class="attendance">
+            <div class="attendance-heading">Attendance View</div>
+            <hr>
+            <br>
+            <progress class="CHE" max="100" value="78"></progress>
+            <br>
+            <progress class="ECE" max="100" value="60"></progress>
+            <br>
+            <progress class="MEC" max="100" value="83"></progress>
+            <br>
+            <progress class="PEL" max="100" value="97"></progress>
+            <br>
+            <progress class="CSE" max="100" value="70"></progress>
+
+        </div>
+
+        <div class="timetable">
+            <div class="timetable-heading">Today's Time Table</div>
+            <hr>
+            <br>
+            
+        </div>
+
+        <div class="announcements">
+            <div class="announcement-heading">Announcements</div>
+            <hr>
+            <br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+            --------------------------------------------------<br>
+
+        </div>
+
+        <div class="leave">
+            <div class="leave-heading">Teacher on Leave</div>
+            <hr>
+            <br>
+
+        </div>
+    </div>
+</body>
+</html>

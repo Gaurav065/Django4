@@ -5,20 +5,26 @@
 {%block content%}
 
 
+<div class="profile">
 
-<img src="/media/{{me.avatar}}" height="100px" width="100px" alt="">
-
-
-<br>{{me.full_name.title}}
-
-<br>{{me.about}}
-
-<br>
-
-<div class="frame">
-    <a href="/resume"><button class="custom-btn btn-6" type="button"><span>Resume</span></button></a>
+    <img src="/media/{{me.avatar}}" height="100px" width="100px" alt="">
 </div>
 
+
+<div class="main">
+    <div class="heading">
+        {{me.full_name.title}}
+    </div>
+    
+    <br>{{me.about}}
+    
+    <br>
+</div>
+
+<!-- <div class="frame">
+</div> -->
+
+<a href="/resume"><button class="rbtn" type="button"><span>Resume</span></button></a>
 
     <!-- <button type="button">Resume</button> -->
 

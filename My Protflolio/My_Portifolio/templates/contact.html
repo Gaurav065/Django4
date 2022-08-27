@@ -2,13 +2,15 @@
 
 {% block title %}Contact Me{% endblock title %}
 
-    {% block content %}
+{% block content %}
 
-    <h1>this is the contatct me</h1>
+<h1>this is the contatct me</h1>
 
-    <img src="/media/{{me.avatar}}" height="100px" width="100px"  alt="">
-    <br>
-    
+<div class="profile">
+    <img src="/media/{{me.avatar}}" height="100px" width="100px" alt="">
+</div>
+
+<div class="main">
     {{me.full_name}}
     <br>
     {{me.about}}
@@ -20,7 +22,5 @@
     {{me.phone_number}}
     <br>
     {{me.email}}
-
-    {% endblock content %}
-
-</html>
+</div>
+{% endblock content %}
