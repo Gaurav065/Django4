@@ -3,6 +3,6 @@ from .models import education, experience,certificates, skill
 
 admin.site.register(education)
 admin.site.register(experience)
-admin.site.register(certificates)
 admin.site.register(skill)
+admin.site.register(certificates)
 # Register your models here.
