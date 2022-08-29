@@ -6,4 +6,4 @@ def project(request):
     projects=Project.objects.all()
     print(len(projects))
     context={'project':projects}
-    return render(request,'projects.html', context)#context)
+    return render(request,'projects.html', context)
