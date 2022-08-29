@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 * {
@@ -6,7 +5,7 @@
 }
 
 body {
-	
+
 	background-image: url('/media/img/wp4979803-anime-scenery-4k-wallpapers.jpg');
 	display: flex;
 	justify-content: center;
@@ -73,7 +72,7 @@ button.ghost {
 
 form {
 	background-image: url('/media/img/2801907.jpg');
-	background-position-x:30%;
+	background-position-x: 30%;
 	background-position-y: 60%;
 	display: flex;
 	align-items: center;
@@ -95,8 +94,8 @@ input {
 .container {
 	background-image: url('/media/img/wp4979803-anime-scenery-4k-wallpapers.jpg');
 	border-radius: 10px;
-  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-			0 10px 10px rgba(0,0,0,0.22);
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+		0 10px 10px rgba(0, 0, 0, 0.22);
 	position: relative;
 	overflow: hidden;
 	width: 768px;
@@ -136,12 +135,15 @@ input {
 }
 
 @keyframes show {
-	0%, 49.99% {
+
+	0%,
+	49.99% {
 		opacity: 0;
 		z-index: 1;
 	}
-	
-	50%, 100% {
+
+	50%,
+	100% {
 		opacity: 1;
 		z-index: 5;
 	}
@@ -158,32 +160,33 @@ input {
 	z-index: 100;
 }
 
-.container.right-panel-active .overlay-container{
+.container.right-panel-active .overlay-container {
 	transform: translateX(-100%);
 }
 
 .overlay {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
-	background-repeat: no-repeat;
+	background-image: url('/media/img/inumaki_senpai_by_seacobalt_dedlpel-pre.png');
+	background-position-x: -8pc;
+	/* background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #FF4B2B, #FF416C); */
+	/* background-repeat: no-repeat;
 	background-size: cover;
-	background-position: 0 0;
-	color: #FFFFFF;
-	position: relative;
+	background-position: 0 0; */
+	color: #090909;
+	/* position: relative; */
 	left: -100%;
 	height: 100%;
 	width: 200%;
-  	transform: translateX(0);
+	transform: translateX(0);
 	transition: transform 0.6s ease-in-out;
 }
 
 .container.right-panel-active .overlay {
-  	transform: translateX(50%);
+	transform: translateX(50%);
 }
 
 .overlay-panel {
-	position: absolute;
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -230,26 +233,26 @@ input {
 }
 
 footer {
-    background-color: #222;
-    color: #fff;
-    font-size: 14px;
-    bottom: 0;
-    position: fixed;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 999;
+	background-color: #222;
+	color: #fff;
+	font-size: 14px;
+	bottom: 0;
+	position: fixed;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 999;
 }
 
 footer p {
-    margin: 10px 0;
+	margin: 10px 0;
 }
 
 footer i {
-    color: red;
+	color: red;
 }
 
 footer a {
-    color: #3c97bf;
-    text-decoration: none;
+	color: #3c97bf;
+	text-decoration: none;
 }
