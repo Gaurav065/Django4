@@ -3,7 +3,10 @@ from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 def reg(request):
-    context={}
+    form = UserCreationForm()
+    context={
+        'form':form,
+        }
     return render(request, 'register.html',context)
 
 def log_in(request):
