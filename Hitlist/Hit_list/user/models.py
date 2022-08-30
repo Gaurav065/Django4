@@ -4,4 +4,4 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class user_cust(models.Model):
-    user = models.
+    pass
