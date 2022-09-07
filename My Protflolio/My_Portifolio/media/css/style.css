@@ -27,6 +27,7 @@ body {
     text-align: center;
     background-color: rgba(128, 25, 104, 0.382);
     border-radius: 15px;
+    backdrop-filter: blur(5px);
     /* border: 2px solid red; */
 }
 
