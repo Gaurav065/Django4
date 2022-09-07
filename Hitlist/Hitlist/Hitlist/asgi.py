@@ -1,5 +1,5 @@
 """
-ASGI config for Hit_list project.
+ASGI config for Hitlist project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Hit_list.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Hitlist.settings')
 
 application = get_asgi_application()

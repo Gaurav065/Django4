@@ -1,5 +1,5 @@
 """
-WSGI config for Hit_list project.
+WSGI config for Hitlist project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Hit_list.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Hitlist.settings')
 
 application = get_wsgi_application()
