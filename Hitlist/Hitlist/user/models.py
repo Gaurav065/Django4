@@ -11,6 +11,7 @@ class Hitter(models.Model):
     avatar = models.ImageField(upload_to='user_avatars/',default='user_avatars/hitter.png')
     created = models.DateTimeField(auto_now_add=True)
     edited = models.DateTimeField(auto_now=True)
+    email = models.EmailField()
 
     def full_name(self):
         return (self.user.first_name +" " +self.user.last_name)
@@ -19,5 +20,3 @@ class Hitter(models.Model):
     def __str__(self):
         return self.user.username
 
-
-    
