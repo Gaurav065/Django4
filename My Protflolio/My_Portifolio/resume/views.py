@@ -25,12 +25,12 @@ def resume(request):
     return render(request, 'resume.html', context)
 
 
-def download_file(request):
-    fl_path = 'C:\Users\dell\Desktop\learn_django\My Protflolio\My_Portifolio\media\img\Screenshot 2022-08-21 054646.png'
-    filename = 'resume.pdf'
+# def download_file(request):
+#     fl_path = 'C:\Users\dell\Desktop\learn_django\My Protflolio\My_Portifolio\media\img\Screenshot 2022-08-21 054646.png'
+#     filename = 'resume.pdf'
 
-    fl = open(fl_path, 'r')
-    mime_type, _ = mimetypes.guess_type(fl_path)
-    response = HttpResponse(fl, content_type=mime_type)
-    response['Content-Disposition'] = "attachment; filename=%s" % filename
-    return response
+#     fl = open(fl_path, 'r')
+#     mime_type, _ = mimetypes.guess_type(fl_path)
+#     response = HttpResponse(fl, content_type=mime_type)
+#     response['Content-Disposition'] = "attachment; filename=%s" % filename
+#     return response
