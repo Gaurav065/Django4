@@ -1,7 +1,5 @@
 from django.contrib import admin
-from .models import Hitter_profile, Hits
+from .models import  Hits
 
-
-admin.site.register(Hitter_profile)
 admin.site.register(Hits)
-# Register your models here.
+
