@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 
 
+
 class Hitter(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     hit = models.CharField(max_length=150, null=True, blank= True)
