@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hit List</title>
+</head>
+<body>
+    <h1>Hit list</h1>
+
+    <table>
+        <tr>
+            <th>Hit List</th>
+        </tr>
+        {% for hit in object_list%}
+        <tr>
+            <td>{{hit.title}}</td>
+        </tr>
+        {%empty%}
+        <h3>No items in list</h3>
+        {%endfor%}
+    </table>
+
+</body>
+</html>

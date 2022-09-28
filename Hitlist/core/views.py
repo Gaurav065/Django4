@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from django.views.generic.list import ListView
+from .models import hitter
 
-# Create your views here.
+class Hitlist(ListView):
+    model = hitter 
+    

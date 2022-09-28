@@ -9,6 +9,8 @@ class hitter(models.Model):
     user = models.ForeignKey(User, on_delete = models.CASCADE, null = True, blank=True)
     hit_title = models.CharField(max_length = 300, null=True, blank=True)
     hit_brief = models.CharField(max_length  = 200, null= True, blank=True)
+    hit_img = models.ImageField(null=True, blank=True)
+    hit_url = models.URLField(null=True,blank=True)
     status = models.BooleanField(default=False)
     date_created = models.DateTimeField(auto_now_add=True)
 
