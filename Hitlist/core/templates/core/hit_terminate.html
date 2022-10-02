@@ -1,0 +1,7 @@
+<h1>Hit Termination</h1>
+<a href="{%url 'Hitlist'%}"></a>
+<form action="" method="POST">
+    {%csrf_token%}
+    <p>Confirm Hit termination, The hit will not be reaquired after Termination "{{h}}"</p>
+    <input type="submit" value="Terminate">
+</form>

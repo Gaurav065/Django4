@@ -1,0 +1,7 @@
+<h1>HitUpdation</h1>
+<a href="{%url 'Hitlist'%}"></a>
+<form action="" method="Post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit" value="Update">
+</form>

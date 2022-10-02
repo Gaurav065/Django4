@@ -1,26 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hit List</title>
-</head>
-<body>
+
+{%if request.user.is_authenticated%}
+    <p>{{request.user}}</p>
+    <a href="%url 'Hitter_DiveOut%">Dive Out</a>
+    {%else%}
+    <a href="%url 'Hitter_DiveIn'%">Dive In</a>
+    {%endif%}
+    
+    
     <h1>Hit list</h1>
+    <a href="{% url 'Hit_init' %}">Initiate Hit</a>
 
     <table>
         <tr>
-            <th>Hit List</th>
+            <th>Hits</th>
         </tr>
-        {% for hit in object_list%}
+        {% for hit in Hits %}
         <tr>
-            <td>{{hit.title}}</td>
+            <td>{{hit}}</td>
+            <td><a href="{% url 'hit' hit.id%}"> Views</a></td>
+            <td><a href="{% url 'Hit_update' hit.id%}"> Update</a></td>
+            <td><a href="{% url 'Hit_terminate' hit.id%}"> Terminate</a></td>
+
         </tr>
         {%empty%}
         <h3>No items in list</h3>
-        {%endfor%}
+        {% endfor %}
     </table>
 
-</body>
-</html>
+    

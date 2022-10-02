@@ -1,0 +1,10 @@
+<h1>Hit Initiate</h1>
+
+    <a href="{%url 'Hitlist'%}">Back to square 1</a>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <input type="submit" value="Initiate">
+</form>
