@@ -6,6 +6,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from django.contrib.auth.views import LoginView,LogoutView
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 from django.urls import reverse_lazy
 from .models import hitter
 
@@ -19,37 +21,34 @@ class HitterLoginView(LoginView):
     def get_success_url(self):
         return reverse_lazy('Hitlist')
 
-class HitterLogoutView(LogoutView):
-    template_name='core/Hitter_DiveOut.html'
-    fields = '__all__'
-    re
 
-class Hitlist(ListView):
+
+class Hitlist(LoginRequiredMixin,ListView):
     model = hitter 
     context_object_name= 'Hits'
     ordering=['date_created']
     
-class HitDetails(DetailView):
+class HitDetails(LoginRequiredMixin,DetailView):
     model = hitter
     context_object_name= 'h'
     template_name= 'core/hits.html'
 
 
-class HitCreate(CreateView):
+class HitCreate(LoginRequiredMixin,CreateView):
     model = hitter
     template_name='core/hit_init.html'
 
     fields= '__all__'
     success_url=reverse_lazy('Hitlist')
 
-class HitUpdate(UpdateView):
+class HitUpdate(LoginRequiredMixin,UpdateView):
     model = hitter
     template_name='core/hit_updation.html'
 
     fields = '__all__'
     success_url= reverse_lazy('Hitlist')
 
-class HitTerminate(DeleteView):
+class HitTerminate(LoginRequiredMixin,DeleteView):
     model = hitter
     template_name='core/hit_terminate.html'
 

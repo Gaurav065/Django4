@@ -1,9 +1,9 @@
 
 {%if request.user.is_authenticated%}
     <p>{{request.user}}</p>
-    <a href="%url 'Hitter_DiveOut%">Dive Out</a>
+    <a href="{%url 'Hitter_DiveOut'%}">Dive Out</a>
     {%else%}
-    <a href="%url 'Hitter_DiveIn'%">Dive In</a>
+    <a href="{%url 'Hitter_DiveIn'%}">Dive In</a>
     {%endif%}
     
     
