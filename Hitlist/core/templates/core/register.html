@@ -1,0 +1,10 @@
+<h1>Register/Signup</h1>
+<form method="POST">
+    {%csrf_token%}
+    {{form.as_p}}    
+    
+    <input type="submit" value="Register">
+
+
+<p>Already an Hitter? login <a href="{url 'Hitter_DiveIn'}">Login</a></p>
+</form>
